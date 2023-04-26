@@ -24,7 +24,7 @@ public class DANI extends PApplet {
 	public void setup() {
 		colorMode(HSB);
 		loadFile();
-		//PrintModel();
+		PrintModel();
 
 	}
 
@@ -39,14 +39,14 @@ public class DANI extends PApplet {
 				wordsList.add(words[j].toLowerCase());
 			}
 		}
-		String[] words = wordsList.toArray(new String[0]);
+		words = wordsList.toArray(new String[0]); // Assign the array to global variable
 		for (int i = 0; i < words.length; i++) {
 			System.out.println(words[i]);
 		}
 	}
 
 	public void PrintModel() {
-		for (int i = 0; i < words.length; i++) {
+		for (int i = 0; i < words.length - 1; i++) { 
 			int count = findWord(words[i]);
 			System.out.println(words[i] + ": " + words[i + 1] + "(" + count + ")");
 		}
@@ -56,15 +56,14 @@ public class DANI extends PApplet {
 	public int findWord(String s) {
 		int count = 0;
 		for (int i = 0; i < words.length; i++) {
-			if (s == words[i]) {
+			if (s.equals(words[i])) { // Use equals() method to compare strings
 				count++;
-				return count;
-			}
-			if (count == 0) {
-				System.out.println("Word not found");
 			}
 		}
-		return 0;// "Word not found";
+		if (count == 0) {
+			System.out.println("Word not found");
+		}
+		return count;
 	}
 
 	public void keyPressed() {
