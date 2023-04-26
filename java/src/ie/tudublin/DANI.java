@@ -23,7 +23,7 @@ public class DANI extends PApplet {
 
 	public void setup() {
 		colorMode(HSB);
-		//loadFile();
+		loadFile();
 		PrintModel();
 
 	}
@@ -32,7 +32,7 @@ public class DANI extends PApplet {
 		line = loadStrings("small.txt");
 		List<String> wordsList = new ArrayList<>();
 		for (int i = 0; i < line.length; i++) {
-			//System.out.println(line[i]);
+			System.out.println(line[i]);
 			String[] words = split(line[i], ' ');
 			for (int j = 0; j < words.length; j++) {
 				// words[j].replaceAll("[^\\w\\s]","");
@@ -40,13 +40,13 @@ public class DANI extends PApplet {
 			}
 		}
 		words = wordsList.toArray(new String[0]); // Assign the array to global variable
-		/*for (int i = 0; i < words.length; i++) {
+		for (int i = 0; i < words.length; i++) {
 			System.out.println(words[i]);
-		}*/
+		}
 	}
 
 	public void PrintModel() {
-		for (int i = 0; i < words.length - 1; i++) { 
+		for (int i = 0; i < words.length - 1; i++) { // Use words.length - 1 to avoid out-of-bounds error
 			int count = findWord(words[i]);
 			System.out.println(words[i] + ": " + words[i + 1] + "(" + count + ")");
 		}
@@ -54,7 +54,6 @@ public class DANI extends PApplet {
 	}
 
 	public int findWord(String s) {
-		loadFile();
 		int count = 0;
 		for (int i = 0; i < words.length; i++) {
 			if (s.equals(words[i])) { // Use equals() method to compare strings
