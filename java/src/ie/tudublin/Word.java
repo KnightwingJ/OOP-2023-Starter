@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-public class Word {
+public class Word{
     private String word;
 
     ArrayList<Follow>follows = new ArrayList<Follow>();
@@ -34,6 +34,7 @@ public class Word {
     }
 
     public void findFollow(String str){
-        
+        //String word=findWord(str);
+
     }
 }
