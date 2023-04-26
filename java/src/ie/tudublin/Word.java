@@ -35,6 +35,8 @@ public class Word{
 
     public void findFollow(String str){
         //String word=findWord(str);
-
+        DANI s=new DANI();
+        s.findWord(str);
+        
     }
 }
