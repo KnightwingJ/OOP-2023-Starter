@@ -6,6 +6,10 @@ public class Follow {
     private int count;
 
 
+    public Follow(String word, int count) {
+        this.word = word;
+        this.count = count;
+    }
     public String getWord() {
         return word;
     }
@@ -16,10 +20,6 @@ public class Follow {
         return count;
     }
     public void setCount(int count) {
-        this.count = count;
-    }
-    public Follow(String word, int count) {
-        this.word = word;
         this.count = count;
     }
     @Override

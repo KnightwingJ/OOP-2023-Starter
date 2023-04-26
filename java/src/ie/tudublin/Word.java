@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Word {
     private String word;
 
-    ArrayList<Follow>words = new ArrayList<Follow>();
+    ArrayList<Follow>follows = new ArrayList<Follow>();
 
-    public Word(String word, ArrayList<Follow> words) {
+    public Word(String word, ArrayList<Follow> follows) {
         this.word = word;
-        this.words = words;
+        this.follows = follows;
     }
 
     public String getWord() {
@@ -21,17 +21,19 @@ public class Word {
     }
 
     public ArrayList<Follow> getWords() {
-        return words;
+        return follows;
     }
 
-    public void setWords(ArrayList<Follow> words) {
-        this.words = words;
+    public void setWords(ArrayList<Follow> follows) {
+        this.follows = follows;
     }
 
     @Override
     public String toString() {
-        return "Word [word=" + word + ", words=" + words + "]";
+        return "Word [word=" + word + ", follows=" + follows + "]";
     }
 
-    
+    public void findFollow(String str){
+        
+    }
 }
